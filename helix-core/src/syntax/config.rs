@@ -268,6 +268,10 @@ pub enum LanguageServerFeature {
     RenameSymbol,
     InlayHints,
     DocumentColors,
+    // Tinymist/typst
+    TinymistStartPreview,
+    TinymistKillPreview,
+    TinymistScrollPreview,
 }
 
 impl Display for LanguageServerFeature {
@@ -292,7 +296,9 @@ impl Display for LanguageServerFeature {
             RenameSymbol => "rename-symbol",
             InlayHints => "inlay-hints",
             DocumentColors => "document-colors",
-        };
+            TinymistStartPreview => "tinymist-preview-start",
+            TinymistKillPreview => "tinymist-preview-stop",
+            TinymistScrollPreview => "tinymist-preview-scroll",        };
         write!(f, "{feature}",)
     }
 }
